@@ -90,6 +90,7 @@ def main():
     for arg in sys.argv:
         if arg in accepted_param:
             valid_param = True
+            break
 
     if not valid_param:
         sys_exit(1)
