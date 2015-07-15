@@ -80,10 +80,18 @@ class DemoEc2(object):
 
 
 def main():
+
     if len(sys.argv) != 3:
         sys_exit(1)
 
-    if (sys.argv[1] == 'start' or sys.argv[1] == 'history' or sys.argv[1] == 'show' or sys.argv[1] == 'stop') is False:
+    accepted_param = ['start', 'history', 'show', 'stop']
+    valid_param = False
+
+    for arg in sys.argv:
+        if arg in accepted_param:
+            valid_param = True
+
+    if not valid_param:
         sys_exit(1)
 
     default_profile='aater-flux7'
